@@ -81,14 +81,25 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   // Realiza una función que retorne la cantidad de los elementos del arreglo que sean mayores a 18.
   // Tu código:
-
+  var count = 0;
+  for (var i = 0; i < arreglo.length; i++) {
+    if(arreglo[i] > 18)
+      count++;
+  }
+  return count;
 }
+
 
 function todosIguales(arreglo) {
   // Escriba la función todosIguales, si todos los elementos de un arreglo son iguales
   // retornar true, caso contrario retornar false.
   // Tu código:
-  
+  var cont = 0;
+  for (var i = 0; i < arreglo.length; i++) {
+    if (arreglo[i] !== arreglo[0])
+      cont++
+  }
+  return cont === 0;
 } 
 
 function mesesDelAño(array) {
@@ -96,8 +107,18 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   // Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-
+  var meses = [];
+  for (var i = 0; i < arreglo.length; i++){ 
+    if(array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre') 
+      meses.push(array[i]);
+  }
+  if (meses.length < 3)   
+    return "No se encontraron los meses pedidos";
+  else
+    return meses;
+  
 }
+
 
 function breakStatement(numero) {
   // Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -107,7 +128,13 @@ function breakStatement(numero) {
   // devolver: "Se interrumpió la ejecución"
   // Pista: usá el statement 'break'
   // Tu código:
-
+  var results = [];
+  for (var i = 0; i < 10; i++) {
+    if(i === numero) return 'Se interrumpió la ejecución';
+    numero = numero + 2;
+    results.push(numero);
+  }
+  return results;
 }
 
 function continueStatement(numero) {
@@ -118,7 +145,13 @@ function continueStatement(numero) {
   // y se continua con la siguiente iteración
   // Pista: usá el statement 'continue'
   // Tu código:
-  
+  var results = [];
+  for (var i = 0; i < 10; i++) {
+    numero = numero + 2;
+    if(i === 5) continue;
+    results.push(numero);
+  }
+  return results
 }
 
 function crearGato(nombre, edad) {
@@ -142,7 +175,8 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-
+  objeto[property] = null;
+  return objeto;
 }
 
 function invocarMetodo(objeto, metodo) {
