@@ -245,7 +245,11 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-
+  var sumaLikes = 0;
+  for (var i = 0; i < usuario.posts.length; i++) {
+    sumaLikes = sumaLikes + usuario.posts[i].likes;    
+  }
+  return sumaLikes;
 }
 
 // No modificar nada debajo de esta línea
