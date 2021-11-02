@@ -12,6 +12,8 @@ function incrementarPorUno(array) {
   // Tu código:
   for (var i = 0; i < array.length; i++) {
     array[i] = array[i] + 1;
+  }
+  return array
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -29,7 +31,7 @@ function dePalabrasAFrase(palabras) {
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
   var frase = palabras[0]
-  for (var i = 0; i < palabras.length; i++) {
+  for (var i = 1; i < palabras.length; i++) {
     frase = frase + " " + palabras[i]
   }
   return frase;
@@ -47,7 +49,7 @@ function promedioResultadosTest(resultadosTest) {
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
   var j = 0;
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0; i < resultadosTest.length; i++) {
     j = j + resultadosTest[i]
   }
   return j / resultadosTest.length;
@@ -108,7 +110,7 @@ function mesesDelAño(array) {
   // Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
   var meses = [];
-  for (var i = 0; i < arreglo.length; i++){ 
+  for (var i = 0; i < array.length; i++){ 
     if(array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre') 
       meses.push(array[i]);
   }
@@ -164,7 +166,7 @@ function crearGato(nombre, edad) {
     nombre: nombre,
     edad: edad,
     meow: function(){
-      return "Meow"
+      return "Meow!"
     }
   }
   return objetoGato
